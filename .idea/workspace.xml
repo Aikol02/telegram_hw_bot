@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62c0941b-21b5-4a94-aa66-6e96e7c50fd2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/handlers/inline.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/inline.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/inline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +137,7 @@
       <workItem from="1659426124087" duration="16410000" />
       <workItem from="1659510825637" duration="4269000" />
       <workItem from="1659515130524" duration="9368000" />
-      <workItem from="1659526587538" duration="3086000" />
+      <workItem from="1659526587538" duration="5192000" />
     </task>
     <servers />
   </component>

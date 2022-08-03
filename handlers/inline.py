@@ -30,7 +30,7 @@ async def inline_wiki_handler(query: types.InlineQuery):
     result_id: str = hashlib.md5(text.encode()).hexdigest()
     article = [types.InlineQueryResultArticle(
         id=result_id,
-        title='Wiki',
+        title='Wiki: ',
         url=link,
         input_message_content=types.InputMessageContent(
             message_text=link
