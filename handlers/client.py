@@ -3,12 +3,15 @@ from aiogram import types, Dispatcher
 from config import bot
 from aiogram.types import ParseMode, InlineKeyboardButton, InlineKeyboardMarkup
 from config import ADMIN
-
 from database.bot_db import sql_command_random
+from parser import dorama
+
+from keyboards import client_kb
 
 
 async def start(message: types.Message):
-    await bot.send_message(message.chat.id, f'Поздравляю вы запустили меня')
+    await bot.send_message(message.chat.id, f'Поздравляю вы запустили меня',
+                           reply_markup=client_kb.start_markup)
 
 
 async def quiz(message: types.Message):
@@ -68,9 +71,21 @@ async def show_random_food(message: types.Message):
     await sql_command_random(message)
 
 
+async def parser_dorama(message: types.Message):
+    data = dorama.parser()
+    for dorams in data:
+        await bot.send_message(
+            message.from_user.id,
+            f"{dorams['title']}\n\n"
+            f"{dorams['desc']}\n"
+            f"{dorams['year']}\n\n"
+            f"{dorams['link']}")
+
+
 def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(start, commands=['start'])
     dp.register_message_handler(quiz, commands=['quiz'])
     dp.register_message_handler(mem, commands=['mem'])
     dp.register_message_handler(pin, commands=['pin'], commands_prefix='!/')
+    dp.register_message_handler(parser_dorama, commands=["doramy"])
     dp.register_message_handler(game)

@@ -6,6 +6,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from config import bot, ADMIN
 from database import bot_db
+from keyboards import client_kb
 
 
 class FSMAdmin(StatesGroup):
@@ -20,7 +21,8 @@ async def fsm_start(message: types.Message):
         # if message.from_user.id in ADMIN:
         await FSMAdmin.photo.set()
         await message.answer(f"Салам {message.from_user.full_name}\n"
-                             f"Скинь фотку еды!")
+                             f"Скинь фотку еды!",
+                             reply_markup=client_kb.cancel_markup)
     # else:
     #     await message.answer("Ты не мой Босс\nИШАК🙄")
     else:
