@@ -8,3 +8,4 @@ TOKEN = config("TOKEN")
 bot = Bot(TOKEN)
 dp = Dispatcher(bot=bot, storage=storage)
 ADMIN = [5029289362]
+URL = " https://python19tgbot.herokuapp.com/"
